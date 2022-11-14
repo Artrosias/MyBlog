@@ -1,13 +1,12 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 
-{%block title%}
+{% block title %}
 About
-{%endblock%}
+{% endblock %}
 
-{%block content%}
-
-<div class="container">
+{% block content %}
+<div class="container mt-3">
     <h1>CHI SIAMO</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet deserunt molestias quidem perspiciatis dicta magnam tenetur rem exercitationem veritatis tempore delectus inventore dignissimos, molestiae officiis voluptatum unde! Mollitia, voluptatem.</p>
+    <p>{{ lipsum(n=3, min=5, max=10) }}</p>
 </div>
-{%endblock%}
+{% endblock %}

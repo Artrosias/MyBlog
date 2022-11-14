@@ -1,3 +1,13 @@
-.custom-navbar{
+body {
+    background-color: beige;
+}
+.custom-navbar {
     background-color: brown!important;
+}
+
+.snippet-about-home {
+    background-color: blanchedalmond;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
 }

@@ -1,12 +1,23 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 
-{%block title%}
+{% block title %}
 Homepage
-{%endblock%}
+{% endblock %}
 
-{%block content%}
-<div class="container">
-    <h1>Homepage</h1>
-
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-9 order-md-2">
+            <h1>HOMEPAGE!</h1>
+            {% for post in posts %}
+            <h5>{{ post.title }}</h5>
+            <p>{{ post.body }}</p>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 order-md-1">
+            {% include 'snippet_about.html' %}
+        </div>
+    </div>
+    
 </div>
-{%endblock%}
+{% endblock %}
