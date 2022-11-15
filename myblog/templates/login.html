@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="container mt-3 text-center">
+    <h1>Accesso area riservata</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form method="post" novalidate>
+                <div class="form-group">
+                    {{ form.username.label }}
+                    {{ form.username(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label }}
+                    {{ form.password(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ form.remember_me.label }}
+                    {{ form.remember_me(class="form-control") }}
+                </div>
+                {{ form.submit(class="btn btn-outline-secondary") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
