@@ -1,23 +1,22 @@
-{% extends 'base.html' %}
-
-{% block title %}
-Homepage
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} Homepage {% endblock %} {% block
+content %}
 <div class="container mt-3">
-    <div class="row">
-        <div class="col-md-9 order-md-2">
-            <h1>HOMEPAGE!</h1>
-            {% for post in posts %}
-            <h5>{{ post.title }}</h5>
-            <p>{{ post.body }}</p>
-            {% endfor %}
-        </div>
-        <div class="col-md-3 order-md-1">
-            {% include 'snippet_about.html' %}
-        </div>
+  <div class="row">
+    <div class="col-md-9 order-md-2">
+      <h1>HOMEPAGE!</h1>
+      {% for post in posts %}
+      <div class="post-home">
+        <h5 class="mt-1 mx-1">   <a href="{{ url_for('post_detail', post_id=post.id) }}" class="custom-link"> {{ post.title }}</a></h5>
+        <p class="mx-1 p-small">{{ post.created_at.strftime('%d-%m-%Y') }}</p>
+        {% if post.description %}
+        <p>{{ post.description }}</p>
+        <p class="mx-1"> {{ post.description }} </p>
+        {% endif %}
+      </div>
+
+      {% endfor %}
     </div>
-    
+    <div class="col-md-3 order-md-1">{% include 'snippet_about.html' %}</div>
+  </div>
 </div>
 {% endblock %}

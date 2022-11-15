@@ -11,3 +11,34 @@ body {
     border: 1px solid black;
     border-radius: 5px;
 }
+
+.post-home {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.p-small {
+    font-size: 0.800rem;
+}
+
+.detail-post{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.custom-link{
+    color: #3f3f3f;
+    text-decoration: none;
+}
+
+.custom-link:hover{
+    color: #3f3f3f;
+    text-decoration: underline;
+}
+
+.custom-date {
+    font-style: italic;
+}
