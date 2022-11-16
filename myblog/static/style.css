@@ -23,18 +23,18 @@ body {
     font-size: 0.800rem;
 }
 
-.detail-post{
+.detail-post {
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-.custom-link{
+.custom-link {
     color: #3f3f3f;
     text-decoration: none;
 }
 
-.custom-link:hover{
+.custom-link:hover {
     color: #3f3f3f;
     text-decoration: underline;
 }
