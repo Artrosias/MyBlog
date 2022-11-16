@@ -9,7 +9,7 @@ Homepage
     <div class="row">
         <div class="col-md-9 order-md-2">
             <h1>HOMEPAGE!</h1>
-            {% for post in posts %}
+            {% for post in posts.itmes %}
             <div class="post-home">
                 <h5 class="mt-1 mx-1">
                     <a href="{{ url_for('post_detail', post_id=post.id) }}" class="custom-link">
@@ -22,6 +22,14 @@ Homepage
                 {% endif %}
             </div>
             {% endfor %}
+            <div class="pagination-block">
+                {% if previous_page %}
+                    <a href="{{ previous_page }}" class="btn btn-sm btn-outline-secondary">Indietro</a>
+                {% endif %}
+                {% if next_page %}
+                    <a href="{{ next_page }}" class="btn btn-sm btn-outline-secondary">Avanti</a>
+                {% endif %}
+            </div>
         </div>
         <div class="col-md-3 order-md-1">
             {% include 'snippet_about.html' %}

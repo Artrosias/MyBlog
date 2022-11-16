@@ -1,8 +1,8 @@
-"""Creazione tabelle User e Post
+"""empty message
 
-Revision ID: 72788a2a25eb
+Revision ID: 876d5ad231e1
 Revises: 
-Create Date: 2022-11-13 23:03:02.248557
+Create Date: 2022-11-16 15:09:48.121475
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '72788a2a25eb'
+revision = '876d5ad231e1'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -33,8 +33,9 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.Column('title', sa.String(length=120), nullable=False),
-    sa.Column('description', sa.String(length=240), nullable=True),
+    sa.Column('description', sa.String(length=250), nullable=True),
     sa.Column('body', sa.Text(), nullable=False),
+    sa.Column('image', sa.String(length=120), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

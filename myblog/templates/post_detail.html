@@ -8,16 +8,32 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-9 order-md-2 detail-post">
+            <div>
+                {% if post.image %}
+                <img src="{{ url_for('static', filename='img/posts'+post.image) }}" alt="img-fluid">
+                {% else %}
+                <p>Nessun tipo di immagine di copertina disponibile</p>
+                {% endif %}
+            </div>
             <h5 class="mt-3">{{ post.title }}</h5>
             <p class="mx-1 p-small custom-date">{{ post.created_at.strftime('%d-%m-%Y') }}</p>
             {% if post.description %}
             <p class="mx-1">{{ post.description }}</p>
             {% endif %}
             <p>{{ post.body }}</p>
+
+            {% if current_user.is_authenticated and post.author==current_user %}
+            <a class="btn btn-sm btn-outline-success" href="{{ url_for('post_update', post_id=post.id) }}">Modifica</a>
+            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancellaPost">
+                Cancella
+              </button>
+              
+            {% endif %}
         </div>
         <div class="col-md-3 order-md-1">
             {% include 'snippet_about.html' %}
         </div>
     </div>
 </div>
+{% include 'snippet_delete.html' %}
 {% endblock %}
